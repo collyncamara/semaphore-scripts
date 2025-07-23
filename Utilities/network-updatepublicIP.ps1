@@ -1,22 +1,22 @@
-<#
-.SYNOPSIS
-    A boilerplate PowerShell script for updating public IP in Cloudflare's DNS records
+# <#
+# .SYNOPSIS
+#     A boilerplate PowerShell script for updating public IP in Cloudflare's DNS records
 
-.NOTES
-    Author: Collyn Camara
-    Date: $(Get-Date -Format "yyyy-MM-dd")
+# .NOTES
+#     Author: Collyn Camara
+#     Date: $(Get-Date -Format "yyyy-MM-dd")
 
 
-    Use the following block to load env variables from a .env file. The current method is set up for loading env variables from Semaphore UI's key store.
-    #######################################
-    $envFile = Get-Content -Path "./.env"
+#     Use the following block to load env variables from a .env file. The current method is set up for loading env variables from Semaphore UI's key store.
+#     #######################################
+#     $envFile = Get-Content -Path "./.env"
 
-    # ENV Secrets
-    $CLOUDFLARE_DNS_API_KEY = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_API_KEY=" } | ForEach-Object { $_.Split('=')[1] }
-    $CLOUDFLARE_DNS_ZONE_ID = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_ZONE_ID=" } | ForEach-Object { $_.Split('=')[1] }
-    $CLOUDFLARE_DNS_RECORD_NAME = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_RECORD_NAME=" } | ForEach-Object { $_.Split('=')[1] }
-    #######################################
-#>
+#     # ENV Secrets
+#     $CLOUDFLARE_DNS_API_KEY = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_API_KEY=" } | ForEach-Object { $_.Split('=')[1] }
+#     $CLOUDFLARE_DNS_ZONE_ID = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_ZONE_ID=" } | ForEach-Object { $_.Split('=')[1] }
+#     $CLOUDFLARE_DNS_RECORD_NAME = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_RECORD_NAME=" } | ForEach-Object { $_.Split('=')[1] }
+#     #######################################
+# #>
 
 ############# INITIZALIZE LOGGING #############
 $VerbosePreference = "Continue"
