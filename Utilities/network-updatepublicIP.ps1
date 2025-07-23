@@ -20,7 +20,6 @@ $envFile = Get-Content -Path "./.env"
 $CLOUDFLARE_DNS_API_KEY = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_API_KEY=" } | ForEach-Object { $_.Split('=')[1] }
 $CLOUDFLARE_DNS_ZONE_ID = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_ZONE_ID=" } | ForEach-Object { $_.Split('=')[1] }
 $CLOUDFLARE_DNS_RECORD_NAME = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_RECORD_NAME=" } | ForEach-Object { $_.Split('=')[1] }
-$CLOUDFLARE_DNS_ACCOUNT_ID = $envFile | Where-Object { $_ -match "^CLOUDFLARE_DNS_ACCOUNT_ID=" } | ForEach-Object { $_.Split('=')[1] }
 
 Write-Verbose "Environment variables loaded successfully."
 Write-Verbose "Creating global variables for runtime..."
